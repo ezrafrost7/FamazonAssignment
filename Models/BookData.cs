@@ -22,6 +22,7 @@ namespace FamazonAssignment.Models
         public string Publisher { get; set; }
         //this needs to have its own verification type
         [Required]
+        [RegularExpression(@"^\d{2,3}[-]{0,1}\d{10}|\d{9,11}$", ErrorMessage = "Not entered in valid ISBN format")]
         public string ISBN { get; set; }
         [Required]
         public string Classification { get; set; }
