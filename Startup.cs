@@ -1,6 +1,8 @@
+using FamazonAssignment.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,12 +20,22 @@ namespace FamazonAssignment
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        //we add a setter to this
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //we have to add the database service to this
+            services.AddDbContext<FamazonDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration["ConnectionStrings:FamazonConnection"]);
+            });
+
+            //this gives the user a piece of the database that they need for interactions
+            services.AddScoped<IFamazonRepository, EFFamazonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +64,9 @@ namespace FamazonAssignment
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //this is so that we can actually create and pass the seed data
+            SeedData.EnsurePopulated(app);
         }
     }
 }
