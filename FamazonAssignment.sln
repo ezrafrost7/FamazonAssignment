@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamazonAssignment", "FamazonAssignment.csproj", "{5C9CD8C7-40F8-4145-9F38-BBA15B4777EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C9CD8C7-40F8-4145-9F38-BBA15B4777EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9CD8C7-40F8-4145-9F38-BBA15B4777EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9CD8C7-40F8-4145-9F38-BBA15B4777EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9CD8C7-40F8-4145-9F38-BBA15B4777EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D981FAEC-DC73-418D-9C13-ED9A51D3571F}
+	EndGlobalSection
+EndGlobal
