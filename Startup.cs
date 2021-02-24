@@ -63,7 +63,7 @@ namespace FamazonAssignment
                 //this modifies how the url looks
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "BookList/{page}",
+                    "BookList/P{page}",
                     new { Controller = "Home", action = "Index" });
 
                 //need a default because we have edited the way the page numbers look

@@ -1,13 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewData["PageDescription"] = "Current Book List";
 }
 @model BookListViewModel
-
-<header>
-    <h1>Welcome to Famazon: the Fake Amazon</h1>
-</header>
-
-<h4>Current List of Books</h4>
 
 <table class="table-bordered table-dark col-12">
     <thead>
@@ -44,5 +39,4 @@
 <div page-model="@Model.PagingInfo"
      page-action="Index" page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"
-     page-class-selected="btn-danger" class="btn-group pull-right m-1"
-     ></div>
+     page-class-selected="btn-danger" class="btn-group pull-right m-1"></div>
