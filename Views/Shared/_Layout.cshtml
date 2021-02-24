@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="dropdown-header">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Famazon</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body class="bg-info">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -28,11 +28,11 @@
     </header>
 
     <div class="row m-1 p-1">
-        <div class="col-8">
+        <div class="col-8 badge-dark rounded">
             <h2>Famazon: the Fake Amazon</h2>
         </div>
 
-        <div class="col-4 float-right">
+        <div class="col-4 float-right p-2">
             <h4>@ViewData["PageDescription"]</h4>
         </div>
     </div>
@@ -44,7 +44,7 @@
     </div>
 
 
-    <footer class="border-top footer text-muted col-2">
+    <footer class="border-top footer text-dark col-12">
         Created by Ezra Frost - Copyright 2021
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
