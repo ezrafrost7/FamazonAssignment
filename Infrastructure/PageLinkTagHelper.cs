@@ -45,6 +45,13 @@ namespace FamazonAssignment.Infrastructure
                 tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
                 tag.InnerHtml.Append(i.ToString());
 
+                //this is created for the css stuff, so that it can enable the styling of the page numbers
+                if (PageClassesEnabled)
+                {
+                    tag.AddCssClass(PageClass);
+                    tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelected : PageClassNormal);
+                }
+
                 //appending the tag to the inner html to be displayed/used on the index
                 result.InnerHtml.AppendHtml(tag);
             }

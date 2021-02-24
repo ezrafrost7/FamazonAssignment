@@ -187,7 +187,7 @@ namespace FamazonAssignment.Models
 
                     new BookData
                     {
-                        Title = "Telling Lies: Clues to Deceit in the Marketplace",
+                        Title = "Telling Lies",
                         AuthorFirstName = "Paul",
                         AuthorLastName = "Ekman",
                         Publisher = "Harper Collins",

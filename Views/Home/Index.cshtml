@@ -9,7 +9,7 @@
 
 <h4>Current List of Books</h4>
 
-<table class="table-bordered table-dark">
+<table class="table-bordered table-dark col-12">
     <thead>
         <tr>
             <th>Title</th>
@@ -40,5 +40,9 @@
     </tbody>
 </table>
 
-<!--the dynamically created page numbers-->
-<div page-model="@Model.PagingInfo"></div>
+<!--the dynamically created page numbers, also has the bootstrapping for the page number buttons-->
+<div page-model="@Model.PagingInfo"
+     page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-danger" class="btn-group pull-right m-1"
+     ></div>
