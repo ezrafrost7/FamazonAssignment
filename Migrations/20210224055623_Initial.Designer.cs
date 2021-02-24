@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FamazonAssignment.Migrations
 {
     [DbContext(typeof(FamazonDbContext))]
-    [Migration("20210218050603_Initial2")]
-    partial class Initial2
+    [Migration("20210224055623_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

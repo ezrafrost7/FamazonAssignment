@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FamazonAssignment.Migrations
 {
     [DbContext(typeof(FamazonDbContext))]
-    [Migration("20210218051426_Initial3")]
-    partial class Initial3
+    [Migration("20210224062907_Updates")]
+    partial class Updates
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,9 @@ namespace FamazonAssignment.Migrations
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PageNum")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
