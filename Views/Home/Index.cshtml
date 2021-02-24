@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IQueryable<BookData>
+@model BookListViewModel
 
 <header>
     <h1>Welcome to Famazon: the Fake Amazon</h1>
@@ -19,11 +19,12 @@
             <th>Classification</th>
             <th>Category</th>
             <th>Price</th>
+            <th># of Pages</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach (var b in Model)
+        @foreach (var b in Model.Books)
         {
             <tr>
                 <td>@b.Title</td>
@@ -33,7 +34,11 @@
                 <td>@b.Classification</td>
                 <td>@b.Category</td>
                 <td>$@b.Price</td>
+                <td>@b.PageNum pgs</td>
             </tr>
         }
     </tbody>
 </table>
+
+<!--the dynamically created page numbers-->
+<div page-model="@Model.PagingInfo"></div>

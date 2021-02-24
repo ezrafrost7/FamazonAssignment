@@ -60,9 +60,14 @@ namespace FamazonAssignment
 
             app.UseEndpoints(endpoints =>
             {
+                //this modifies how the url looks
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "BookList/{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                //need a default because we have edited the way the page numbers look
+                endpoints.MapDefaultControllerRoute();
             });
 
             //this is so that we can actually create and pass the seed data
