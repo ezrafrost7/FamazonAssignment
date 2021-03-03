@@ -36,7 +36,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        PageNum = 1488
                     },
 
                     new BookData
@@ -49,7 +50,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        PageNum = 944
                     },
 
                     new BookData
@@ -61,7 +63,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0553384611",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        PageNum = 832
                     },
 
                     new BookData
@@ -74,7 +77,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                        PageNum = 864
                     },
 
                     new BookData
@@ -86,7 +90,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0812974492",
                         Classification = "Non-Fiction",
                         Category = "Historical",
-                        Price = 13.33
+                        Price = 13.33,
+                        PageNum = 528
                     },
 
                     new BookData
@@ -98,7 +103,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0804171281",
                         Classification = "Fiction",
                         Category = "Historical Fiction",
-                        Price = 15.95
+                        Price = 15.95,
+                        PageNum = 288
                     },
 
                     new BookData
@@ -110,7 +116,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-1455586691",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 14.99
+                        Price = 14.99,
+                        PageNum = 304
                     },
 
                     new BookData
@@ -122,7 +129,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-1455523023",
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
-                        Price = 21.66
+                        Price = 21.66,
+                        PageNum = 240
                     },
 
                     new BookData
@@ -134,7 +142,8 @@ namespace FamazonAssignment.Models
                         ISBN = "978-1591847984",
                         Classification = "Non-Fiction",
                         Category = "Business",
-                        Price = 29.16
+                        Price = 29.16,
+                        PageNum = 400
                     },
 
                     new BookData
@@ -146,7 +155,47 @@ namespace FamazonAssignment.Models
                         ISBN = "978-0553393613",
                         Classification = "Fiction",
                         Category = "Thrillers",
-                        Price = 15.03
+                        Price = 15.03,
+                        PageNum = 642
+                    },
+
+                    new BookData
+                    {
+                        Title = "It",
+                        AuthorFirstName = "Stephen",
+                        AuthorLastName = "King",
+                        Publisher = "Viking Press",
+                        ISBN = "978-1501142970",
+                        Classification = "Fiction",
+                        Category = "Thrillers",
+                        Price = 11.75,
+                        PageNum = 1138
+                    },
+
+                    new BookData
+                    {
+                        Title = "Lost on a Mountain in Maine",
+                        AuthorFirstName = "Don",
+                        AuthorLastName = "Fendler",
+                        Publisher = "Harper Collins",
+                        ISBN = "978-0688115739",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
+                        Price = 9.99,
+                        PageNum = 117
+                    },
+
+                    new BookData
+                    {
+                        Title = "Telling Lies",
+                        AuthorFirstName = "Paul",
+                        AuthorLastName = "Ekman",
+                        Publisher = "Harper Collins",
+                        ISBN = "978-0393337457",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
+                        Price = 16.47,
+                        PageNum = 416
                     }
 
                 );

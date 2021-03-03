@@ -30,9 +30,9 @@ namespace FamazonAssignment
 
             //we have to add the database service to this
             services.AddDbContext<FamazonDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration["ConnectionStrings:FamazonConnection"]);
-            });
+
+                options.UseSqlite(Configuration["ConnectionStrings:FamazonConnection"]));
+            
 
             //this gives the user a piece of the database that they need for interactions
             services.AddScoped<IFamazonRepository, EFFamazonRepository>();
@@ -60,9 +60,24 @@ namespace FamazonAssignment
 
             app.UseEndpoints(endpoints =>
             {
+                //this modifies how the url looks and the different ways you can type in the url to get to a page
+                endpoints.MapControllerRoute("catPage",
+                    "{category}/P{page:int}",
+                    new { Controller = "Home", action = "Index"}
+                    );
+
+                endpoints.MapControllerRoute("cats",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1}
+                    );
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "BookList/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                //need a default because we have edited the way the page numbers look
+                endpoints.MapDefaultControllerRoute();
             });
 
             //this is so that we can actually create and pass the seed data
