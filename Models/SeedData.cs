@@ -193,7 +193,7 @@ namespace FamazonAssignment.Models
                         Publisher = "Harper Collins",
                         ISBN = "978-0393337457",
                         Classification = "Non-Fiction",
-                        Category = "Self Help",
+                        Category = "Self-Help",
                         Price = 16.47,
                         PageNum = 416
                     }

@@ -37,12 +37,19 @@
         </div>
     </div>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <div class="row m-1 p-1">
 
+        <div class="container col-4">
+            <!--this is for the menu bar to display-->
+            <vc:navigation-menu />
+        </div>
+
+        <div class="container col-8">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
 
     <footer class="border-top footer text-dark col-12">
         Created by Ezra Frost - Copyright 2021
