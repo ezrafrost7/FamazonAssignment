@@ -29,22 +29,30 @@ namespace FamazonAssignment.Controllers
 
         //the new paging info has to be added to make the pages iterable
         //also all of the data needs to be passed, this is done by passing the booklistviewmodel
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             //inputting the repository is passing it to the view for use in the view, like displaying the data
             return View(new BookListViewModel
             {
                 Books = _repository.Books
+                //this is how you edit the view to display only the books of that category, using queries
+                .Where(p => category == null || p.Category == category)
                 .OrderBy(p => p.Title)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
+
                 //now you add the paging info stuff
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    //using a shorthand if statement to dynamically change the number of pages
+                    TotalNumItems = category == null ? _repository.Books.Count() : 
+                    _repository.Books.Where(x => x.Category == category).Count()
+                },
+
+                //set current category
+                Category = category
 
             });
         }

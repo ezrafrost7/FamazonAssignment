@@ -60,7 +60,17 @@ namespace FamazonAssignment
 
             app.UseEndpoints(endpoints =>
             {
-                //this modifies how the url looks
+                //this modifies how the url looks and the different ways you can type in the url to get to a page
+                endpoints.MapControllerRoute("catPage",
+                    "{category}/P{page:int}",
+                    new { Controller = "Home", action = "Index"}
+                    );
+
+                endpoints.MapControllerRoute("cats",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1}
+                    );
+
                 endpoints.MapControllerRoute(
                     "pagination",
                     "BookList/P{page}",

@@ -11,5 +11,7 @@ namespace FamazonAssignment.Models.ViewModels
         public IEnumerable<BookData> Books { get; set; }
         //we need to also pass the new object created to make the pages
         public PagingInfo PagingInfo { get; set; }
+        //this is to know what category book we are using
+        public string Category { get; set; }
     }
 }
