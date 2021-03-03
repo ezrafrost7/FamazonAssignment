@@ -30,9 +30,9 @@ namespace FamazonAssignment
 
             //we have to add the database service to this
             services.AddDbContext<FamazonDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration["ConnectionStrings:FamazonConnection"]);
-            });
+
+                options.UseSqlite(Configuration["ConnectionStrings:FamazonConnection"]));
+            
 
             //this gives the user a piece of the database that they need for interactions
             services.AddScoped<IFamazonRepository, EFFamazonRepository>();
