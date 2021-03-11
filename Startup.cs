@@ -1,6 +1,7 @@
 using FamazonAssignment.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,17 @@ namespace FamazonAssignment
 
             //this gives the user a piece of the database that they need for interactions
             services.AddScoped<IFamazonRepository, EFFamazonRepository>();
+
+            //adding razor page functionality
+            services.AddRazorPages();
+
+            //session capabilities
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            //stuff for cart editing
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +66,8 @@ namespace FamazonAssignment
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -62,7 +76,7 @@ namespace FamazonAssignment
             {
                 //this modifies how the url looks and the different ways you can type in the url to get to a page
                 endpoints.MapControllerRoute("catPage",
-                    "{category}/P{page:int}",
+                    "{category}/P{pageNum:int}",
                     new { Controller = "Home", action = "Index"}
                     );
 
@@ -73,11 +87,13 @@ namespace FamazonAssignment
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "BookList/P{page}",
+                    "BookList/P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 //need a default because we have edited the way the page numbers look
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             //this is so that we can actually create and pass the seed data
